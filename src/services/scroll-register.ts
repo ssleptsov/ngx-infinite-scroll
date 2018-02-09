@@ -4,7 +4,7 @@ import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/sampleTime';
+import 'rxjs/add/operator/throttleTime';
 
 import { ElementRef } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
@@ -62,10 +62,9 @@ export function createScroller(config: Models.IScroller) {
     .map(toInfiniteScrollAction);
 }
 
-export function attachScrollEvent(options: Models.IScrollRegisterConfig): Observable<{}> {
-  return Observable
-    .fromEvent(options.container, 'scroll')
-    .throttle(options.throttle);
+export function attachScrollEvent(options: Models.IScrollRegisterConfig): Observable<any> {
+  const obs = Observable.fromEvent(options.container, 'scroll'); 
+  return options.throttle ? obs.throttleTime(options.throttle) : obs; 
 }
 
 export function toInfiniteScrollParams(

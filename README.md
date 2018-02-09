@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/orizens/ngx-infinite-scroll.svg?branch=master)](https://travis-ci.org/orizens/ngx-infinite-scroll) [![Backers on Open Collective](https://opencollective.com/ngx-infinite-scroll/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/ngx-infinite-scroll/sponsors/badge.svg)](#sponsors) 
 
+** Note: ** This package is a fork of ngx-infinite-scroll, with an a fix scroll up event bug in chrome.
+
 # Angular Infinite Scroll
 Inspired by [ng-infinite-scroll](https://github.com/sroze/ngInfiniteScroll) directive for angular.
 
