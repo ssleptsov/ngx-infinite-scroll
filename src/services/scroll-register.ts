@@ -65,7 +65,7 @@ export function createScroller(config: Models.IScroller) {
 export function attachScrollEvent(options: Models.IScrollRegisterConfig): Observable<{}> {
   return Observable
     .fromEvent(options.container, 'scroll')
-    .sampleTime(options.throttle);
+    .throttle(options.throttle);
 }
 
 export function toInfiniteScrollParams(
